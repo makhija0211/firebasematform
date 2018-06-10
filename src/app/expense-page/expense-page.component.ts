@@ -28,7 +28,7 @@ export class ExpensePageComponent implements OnInit {
       
       this.task = {
         name: '',
-        price: 0,
+        price:0,
         id:0
       };
     }
@@ -45,7 +45,16 @@ export class ExpensePageComponent implements OnInit {
         }
       }
     }
-
+    total:0;
+    onTotal(item)
+    {
+      for(var i=0;i< this.tasks.length;i++)
+      {
+        this.total=this.total+this.tasks[i].price;
+      }
+      console.log(this.total);
+      
+    }
     onStrike(item){
       for(var i = 0;i < this.tasks.length; i++){
         if(item.id == this.tasks[i].id){
@@ -68,6 +77,7 @@ export class ExpensePageComponent implements OnInit {
   onUpload(){
     const fd=new FormData();
     fd.append('image',this.selectedFile,this.selectedFile.name);
+
     /*this.http.post('https://us-central1-imageuploadtest-cfa8e.cloudfunctions.net/helloWorld',fd)
     .subscribe(res =>{
       console.log()

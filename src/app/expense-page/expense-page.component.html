@@ -15,7 +15,7 @@
                 <button class="btn btn-primary" type="button" (click)="onClick()">
                         Add Expense to List !
                 </button>
-                <!--</div>-->
+                
         
                   
         <ul class="list-group">
@@ -24,7 +24,7 @@
                     <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.price }} </span>
                     <span (click)="onEdit(task)" class="glyphicon glyphicon-pencil floatright">&nbsp;</span>
                     <span (click)="onDelete(task)" class="glyphicon glyphicon-remove floatright paddingLeft">&nbsp;</span>
-                    
+                    <span (click)="onTotal(task)">{{Total+task.price}}</span>
                 </li>
         </ul>        
         

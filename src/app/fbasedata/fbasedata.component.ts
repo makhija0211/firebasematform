@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import {DataSource} from '@angular/cdk/collections';
-import { ExpenseService } from './expense.service';
-
+import { DataSource} from '@angular/cdk/collections';
+import { ExpenseService } from '../expense.service';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-fbasedata',
+  templateUrl: './fbasedata.component.html',
+  styleUrls: ['./fbasedata.component.css']
 })
-export class AppComponent {
-
+export class FbasedataComponent implements OnInit {
+ ngOnInit(){}
   expenses = {
     Name: '',
     Price: '',

@@ -1,0 +1,37 @@
+<div>
+    <h4> Expense list </h4>
+    
+    <div class="col-md-6">
+        
+            <div class="input-group"></div>
+                <input type="text" class="form-control" placeholder="Enter Expense name  " [(ngModel)]="task.name" />
+                <div>&nbsp;</div>
+                <input type="text" class="form-control" placeholder="Enter price " [(ngModel)]="task.price" />
+                <div>&nbsp;</div>
+                <input type="file" (change)="onFileSelected($event)">
+                <div>&nbsp;</div>
+                <button class="btn btn-primary" type="button" (click)="onUpload">Upload File</button>    
+                &nbsp;
+                <button class="btn btn-primary" type="button" (click)="onClick()">
+                        Add Expense to List !
+                </button>
+                <!--</div>-->
+        
+                  
+        <ul class="list-group">
+                <li *ngFor="let task of tasks" class="list-group-item">
+                    <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.name }} </span>
+                    <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.price }} </span>
+                    <span (click)="onEdit(task)" class="glyphicon glyphicon-pencil floatright">&nbsp;</span>
+                    <span (click)="onDelete(task)" class="glyphicon glyphicon-remove floatright paddingLeft">&nbsp;</span>
+                    
+                </li>
+        </ul>        
+        
+    </div>
+    
+</div>
+
+
+
+
